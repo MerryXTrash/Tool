@@ -59,10 +59,3 @@ btns:Button(
 )
 
 local btns = serv:Channel("Player")
-
-btns:Button(
-    "Player ESP",
-    function()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/Lucasfin000/SpaceHub/main/UESP'))()
-    end
-)
