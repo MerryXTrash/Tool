@@ -66,3 +66,11 @@ btns:Button(
         loadstring(game:HttpGet('https://raw.githubusercontent.com/Lucasfin000/SpaceHub/main/UESP'))()
     end
 )
+
+tgls:Toggle(
+    "Speed",
+    false,
+    function(bool)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 250
+    end
+)
