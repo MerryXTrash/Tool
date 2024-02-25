@@ -52,10 +52,17 @@ btns:Button(
 )
 
 btns:Button(
-    "Fling",
+    "Shiftlock",
     function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/MiniNoobie/ShiftLockx/main/Shiftlock-MiniNoobie",true))()
     end
 )
 
 local btns = serv:Channel("Player")
+
+btns:Button(
+    "Player ESP",
+    function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Lucasfin000/SpaceHub/main/UESP'))()
+    end
+)
