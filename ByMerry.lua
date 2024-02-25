@@ -66,14 +66,3 @@ btns:Button(
         loadstring(game:HttpGet('https://raw.githubusercontent.com/Lucasfin000/SpaceHub/main/UESP'))()
     end
 )
-
-local sldr =
-    sldrs:Slider(
-    "Walk Speed",
-    0,
-    1000,
-    400,
-    function(t)
-        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed
-    end
-)
