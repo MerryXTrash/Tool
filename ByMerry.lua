@@ -50,3 +50,10 @@ btns:Button(
         loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Fling%20GUI"))()
     end
 )
+
+btns:Button(
+    "Player ESP",
+    function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Lucasfin000/SpaceHub/main/UESP'))()
+    end
+)
