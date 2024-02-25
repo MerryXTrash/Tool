@@ -58,6 +58,20 @@ btns:Button(
     end
 )
 
+btns:Button(
+    "RTX",
+    function()
+        loadstring(game:HttpGet(('https://pastefy.app/BIr8OzrR/raw'),true))()
+    end
+)
+
+btns:Button(
+    "Remove RTX",
+    function()
+        loadstring(game:HttpGet(('https://pastefy.app/BIr8OzrR/raw'),false))()
+    end
+)
+
 local btns = serv:Channel("Player")
 
 btns:Button(
