@@ -67,10 +67,13 @@ btns:Button(
     end
 )
 
-tgls:Toggle(
-    "Speed",
-    false,
-    function(bool)
-        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 250
+local sldr =
+    sldrs:Slider(
+    "Walk Speed",
+    0,
+    1000,
+    400,
+    function(t)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed
     end
 )
