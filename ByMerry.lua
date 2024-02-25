@@ -43,3 +43,10 @@ end)
 tool.Parent = game.Players.LocalPlayer.Backpack
     end
 )
+
+btns:Button(
+    "Fling",
+    function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Fling%20GUI"))()
+    end
+)
