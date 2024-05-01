@@ -15,6 +15,7 @@ local Window = Fluent:CreateWindow({
 --Fluent provides Lucide Icons https://lucide.dev/icons/ for the tabs, icons are optional
 local Tabs = {
     Main = Window:AddTab({ Title = "Main", Icon = "" }),
+    I = Window:AddTab({ Title = "Command", Icon = "" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
 }
 
@@ -23,7 +24,7 @@ local Options = Fluent.Options
 do
     Fluent:Notify({
         Title = "ข้อความจาก x2Raphae1z",
-        Content = "ขอบคุณที่ใช้น่ะครับ",
+        Content = "ขอบคุณที่ใช้น่ะ",
         SubContent = "เริ่มสร้างสคริปต์กันเลย!", -- Optional
         Duration = 5 -- Set to nil to make the notification not disappear
     })
@@ -38,21 +39,21 @@ do
 
 
     Tabs.Main:AddButton({
-        Title = "Copy CFrame",
-        Description = "Very important button",
+        Title = "คัดลอก CFrame",
+        Description = "Click",
         Callback = function()
             Window:Dialog({
-                Title = "Title",
-                Content = "This is a dialog",
+                Title = "ตงลงรึป่าว",
+                Content = "คัดลอก CFrame",
                 Buttons = {
                     {
-                        Title = "Confirm",
+                        Title = "ตกลง",
                         Callback = function()
-                            print("Confirmed the dialog.")
+                            setclipboard(tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame))
                         end
                     },
                     {
-                        Title = "Cancel",
+                        Title = "ยกเลิก",
                         Callback = function()
                             print("Cancelled the dialog.")
                         end
@@ -64,7 +65,125 @@ do
 
 
 
+    Tabs.Main:AddButton({
+        Title = "คัดลอก GamePlace.ID",
+        Description = "Click",
+        Callback = function()
+            Window:Dialog({
+                Title = "ตงลงรึป่าว",
+                Content = "คัดลอกเลขไอดีเกม",
+                Buttons = {
+                    {
+                        Title = "ตกลง",
+                        Callback = function()
+                            local gameId = game.PlaceId
 
+setclipboard(tostring(gameId))
+                        end
+                    },
+                    {
+                        Title = "ยกเลิก",
+                        Callback = function()
+                            print("Cancelled the dialog.")
+                        end
+                    }
+                }
+            })
+        end
+    })
+
+
+
+    Tabs.Main:AddButton({
+        Title = "ใช้งาน RemoteSpy",
+        Description = "Click",
+        Callback = function()
+            Window:Dialog({
+                Title = "ตงลงรึป่าว",
+                Content = "เปิด SimpleSpy",
+                Buttons = {
+                    {
+                        Title = "ตกลง",
+                        Callback = function()
+                            loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpySource.lua"))()
+                        end
+                    },
+                    {
+                        Title = "ยกเลิก",
+                        Callback = function()
+                            print("Cancelled the dialog.")
+                        end
+                    }
+                }
+            })
+        end
+    })
+
+
+
+    Tabs.Main:AddButton({
+        Title = "กันโดนเตะตอนใช้Rspy",
+        Description = "Click",
+        Callback = function()
+            Window:Dialog({
+                Title = "ตงลงรึป่าว",
+                Content = "กันแบน",
+                Buttons = {
+                    {
+                        Title = "ตกลง",
+                        Callback = function()
+                            spawn(function()
+for k,v in pairs(getgc(true)) do if pcall(function() return rawget(v,"indexInstance") end) and type(rawget(v,"indexInstance")) == "table" and (rawget(v,"indexInstance"))[1] == "kick" then v.tvk = {"kick",function() return game.Workspace:WaitForChild("") end} end end
+end)
+                        end
+                    },
+                    {
+                        Title = "ยกเลิก",
+                        Callback = function()
+                            print("Cancelled the dialog.")
+                        end
+                    }
+                }
+            })
+        end
+    })
+    
+
+
+    Tabs.A:AddButton({
+        Title = "Command",
+        Description = "Click",
+        Callback = function()
+            Window:Dialog({
+                Title = "ตงลงรึป่าว",
+                Content = "เปิดใช้งาน Darkdex/olddex/rspy/Fly/More Cheat",
+                Buttons = {
+                    {
+                        Title = "ตกลง",
+                        Callback = function()
+                            loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+                        end
+                    },
+                    {
+                        Title = "ยกเลิก",
+                        Callback = function()
+                            print("Cancelled the dialog.")
+                        end
+                    }
+                }
+            })
+        end
+    })
+
+
+
+    Tabs.A:AddParagraph({
+        Title = "Command guide",
+        Content = ";dex ;rspy ;oldex ;fly ;tpwalk ;noclip"
+    })
+    
+    
+    
     local Colorpicker = Tabs.Main:AddColorpicker("Colorpicker", {
         Title = "Colorpicker",
         Default = Color3.fromRGB(96, 205, 255)
